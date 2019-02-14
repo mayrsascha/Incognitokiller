@@ -8,3 +8,9 @@ const killAllIncognitoTabs = () => {
     }
   });
 };
+
+chrome.idle.onStateChanged.addListener((idleState) => {
+  if (idleState === 'locked') {
+    killAllIncognitoTabs();
+  }
+})
