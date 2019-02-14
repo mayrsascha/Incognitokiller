@@ -1,7 +1,7 @@
 {
   "name": "Incognito Killer",
   "version": "1.0",
-  "description": "Kills all Chrome Incognito tabs before login",
+  "description": "Kills all Chrome Incognito tabs when the screen gets locked",
   "permissions": ["activeTab", "idle"],
   "background": {
     "scripts": ["background.js"],
