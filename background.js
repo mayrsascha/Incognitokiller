@@ -1,7 +1,10 @@
 const killAllIncognitoTabs = () => {
   chrome.tabs.query({}, (tabs) => {
-    tabs
+    const incognitoTabs = tabs
       .filter(tab => tab.incognito)
-      .forEach(tab => chrome.tabs.remove(tab.id));
+      .map(tab => tab.id);
+    if (incognitoTabs.length > 0) {
+      chrome.tabs.remove(incognitoTabs);
+    }
   });
 };
